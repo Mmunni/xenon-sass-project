@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+    transition: .3s;
+}
+li{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+// Background-Image css
+.bg{
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   position: relative;
+   z-index: 2;
+   &:before{
+    content: "";
+    position: absolute;
+    left:0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    opacity: .67;
+    z-index: -1;
+
+
+   }
+
+}
+// title-text-center css
+.bg-text-center{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+
+// text-align
+$text-align : start, center, end, justify;
+@each $i in $text-align{
+    .text-align-#{$i}{
+        align-items: $i;
+    }
+}
+
+// text-transform
+$text-transform : lowercase, capitalize, uppercase;
+@each $i in $text-transform{
+    .text-transform-#{$i}{
+        text-transform: $i;
+    }
+}
+
+// margin
+@for $i from 1 through 10{
+    .mt-#{$i * 10}{
+        margin-top: $i * 10;
+    }
+    .mb-#{$i * 10}{
+        margin-bottom: $i * 10;
+    }
+    .ml-#{$i * 10}{
+        margin-left: $i * 10;
+    }
+    .mr-#{$i * 10}{
+        margin-right: $i * 10;
+    }
+}
+// padding
+
+@for $i  from 1 through 10{
+    .pt-#{$i * 10}{
+        padding-top: $i * 10;
+    }
+    .pb-#{$i * 10}{
+        padding-bottom: $i * 10;
+    }
+    .pl-#{$i * 10}{
+        padding-left: $i * 10;
+    }
+    .pr-#{$i * 10}{
+        padding-right: $i * 10;
+    }
+}
