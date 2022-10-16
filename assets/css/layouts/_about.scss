@@ -1,0 +1,32 @@
+
+.about-desc{
+    h2{
+        font-size: 40px;
+        color: $primary_colour;
+    }
+    p{
+        line-height: 25px;
+        color: #333;
+        font-size: 15px;
+    }
+
+}
+
+.qualification{
+    ul {
+        display: flex;
+        li {
+            display: inline-block;
+            flex-basis: 50%;
+            margin-top: 10px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #333;
+            i {
+                margin-right: 5px;
+                color: $primary_colour;
+              }
+          }
+      }
+}
+ 

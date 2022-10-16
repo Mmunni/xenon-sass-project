@@ -1,0 +1,43 @@
+
+    .header-area{
+        padding: 20px 0;
+        position: relative;
+        &.header-fixed{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index:999;
+        }
+    }
+
+
+.logo{
+    a{
+        border: 1px solid #eee;
+        padding: 5px 15px;
+        font-weight: 700;
+        font-size: 20px;
+        
+    }
+}
+
+.menu{
+     ul{
+         li{
+            display: inline-block;
+            a{
+                display: block;
+                transition: .3s;
+                &:hover{
+                    color: $primary_colour;
+                }
+            }
+        }
+    }
+}
+
+.banner-content{
+    h1{
+            font-size: 80px;
+    }
+}

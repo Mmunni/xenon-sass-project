@@ -1,0 +1,25 @@
+.services-area{
+    background-color: #f6f6f6;
+    .single-service{
+        i{
+            font-size: 25px;
+            background-color: red;
+            padding: 15px;
+            color: #fff;
+            font-weight: 600;
+            transition: .3s;
+        }
+        &:hover i{
+            border-radius: 50%;
+        }
+        p {
+            font-size: 15px;
+            line-height: 22px;
+            color: #666;
+          }
+    }
+
+}
+
+
+

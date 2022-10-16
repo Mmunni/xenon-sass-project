@@ -1,0 +1,10 @@
+// Typography
+$heading: (h1, 40px, 50px, 700), (h2, 32px, 40px, 600), (h3, 28px, 36px, 500), (h4, 24px,30px, 500), (h5, 20px, 24px, 500), (h6, 16px, 22px, 500);
+
+@each $name, $font-size, $line-height, $font-weight in $heading{
+    #{$name} {
+        font-size: $font-size;
+        line-height: $line-height;
+        font-weight: $font-weight;
+    }
+}

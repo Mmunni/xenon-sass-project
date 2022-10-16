@@ -4,7 +4,12 @@ $flex: flex, inline-flex;
         display: $i;
     }
 }
-
+$direction: row, row-reverse, column, column-reverse;
+@each $i in $direction{
+    .flex-direction-#{$i}{
+        flex-direction: $i;
+    }
+}
 $justify: start, center, end, evenly, space-around, space-between;
 @each $i in $justify{
     .justify-content-#{$i}{

@@ -1,3 +1,4 @@
+@import 'variable';
 *{
     margin: 0;
     padding: 0;
@@ -22,6 +23,9 @@ img{
     width: 1170px;
     margin: 0 auto;
 }
+.h-100{
+    height: 100vh;
+}
 // Background-Image css
 .bg{
    background-size: cover;
@@ -37,10 +41,8 @@ img{
     height: 100%;
     width: 100%;
     background-color: #333;
-    opacity: .67;
+    opacity: .77;
     z-index: -1;
-
-
    }
 
 }
@@ -53,12 +55,42 @@ img{
     text-align: center;
     
 }
+.common-section-title{
+    h1{
+        font-size: 45px;
+        position: relative;
+        display: inline-block;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 70px;
+            background-color: #ff3636;
+            height: 2px;
+            bottom: -5px;
+            left: 60px;
+          }
+
+          &::after{
+              content: "";
+              position: absolute;
+              height: 10px;
+              width: 10px;
+              background-color: $primary_colour;
+              border-radius: 50%;
+              bottom: -9px;
+              left: 92px;
+            }
+        }
+          p{
+              color: #777;
+          }
+        }
 
 // text-align
 $text-align : start, center, end, justify;
 @each $i in $text-align{
-    .text-align-#{$i}{
-        align-items: $i;
+    .text-#{$i}{
+        text-align: $i;
     }
 }
 
@@ -71,33 +103,72 @@ $text-transform : lowercase, capitalize, uppercase;
 }
 
 // margin
-@for $i from 1 through 10{
-    .mt-#{$i * 10}{
-        margin-top: $i * 10;
+@for $i from 1 through 20{
+    .margin-#{$i *5}{
+        margin: $i * 5px;
     }
-    .mb-#{$i * 10}{
-        margin-bottom: $i * 10;
+    .mt-#{$i * 5}{
+        margin-top: $i * 5px;
     }
-    .ml-#{$i * 10}{
-        margin-left: $i * 10;
+    .mb-#{$i * 5}{
+        margin-bottom: $i * 5px;
     }
-    .mr-#{$i * 10}{
-        margin-right: $i * 10;
+    .ml-#{$i * 5}{
+        margin-left: $i * 5px;
+    }
+    .mr-#{$i * 5}{
+        margin-right: $i * 5px;
     }
 }
 // padding
 
-@for $i  from 1 through 10{
-    .pt-#{$i * 10}{
-        padding-top: $i * 10;
+@for $i  from 1 through 20{
+    .padding-#{$i * 5}{
+        padding: $i * 5px;
     }
-    .pb-#{$i * 10}{
-        padding-bottom: $i * 10;
+    .pt-#{$i * 5}{
+        padding-top: $i * 5px;
     }
-    .pl-#{$i * 10}{
-        padding-left: $i * 10;
+    .pb-#{$i * 5}{
+        padding-bottom: $i * 5px;
     }
-    .pr-#{$i * 10}{
-        padding-right: $i * 10;
+    .pl-#{$i * 5}{
+        padding-left: $i * 5px;
+    }
+    .pr-#{$i * 5}{
+        padding-right: $i * 5px;
+    }
+}
+// colors
+
+$colors: white, black, red, green;
+
+@each $color in $colors {
+  .text-#{$color} {
+    color: $color;
+  }
+}
+$background:  white, red, black;
+@each $i in $background{
+    .bg-#{$i}{
+        background-color: $i;
+    }
+}
+// common btn
+
+.btn {
+	display: inline-block;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 30px;
+	text-transform: capitalize;
+    font-size: 16px;
+    transition: .3s;
+    
+    &.btn-primary{
+        background-color: $primary_colour;
+    }
+    &:hover{
+        background-color: #333;
     }
 }

@@ -10,9 +10,25 @@
 }
 
 $grid-columns: 12;
-$grid-xxl-breakpoint: 1140px;
 $grid-xl-breakpoint: 1200px;
+$grid-xxl-breakpoint: 1400px;
 
+@media (min-width: $grid-xl-breakpoint){
+    .container{
+        width: 1140px;
+    }
+    @for $i from 1 through $grid-columns{
+        .col-xl-#{$i}{
+            width: (100 / 12) * $i * 1%;
+            padding: 0 15px;
+        }
+    }
+    @for $i from 1 through 10 {
+        .mt-xl-#{$i * 5}{
+            margin-top: $i * 5;
+        }
+    }
+}
 @media (min-width: $grid-xxl-breakpoint){
     .container{
         width: 1320px;
@@ -22,16 +38,10 @@ $grid-xl-breakpoint: 1200px;
             width: (100 / 12) * $i * 1%;
             padding: 0 15px;
         }
-    }
-}
-@media (min-width: $grid-xl-breakpoint){
-    .container{
-        width: 1400px;
-    }
-    @for $i from 1 through $grid-columns{
-        .col-xl-#{$i}{
-            width: (100 / 12) * $i * 1%;
-            padding: 0 15px;
+        @for $i from 1 through 10 {
+            .mt-xxl-#{$i * 5}{
+                margin-top: $i * 5;
+            }
         }
     }
 }
